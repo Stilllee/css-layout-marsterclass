@@ -1,11 +1,13 @@
 .father {
   display: flex;
   height: 100vh;
-  justify-content: flex-end;
-  gap: 10px;
+  justify-content: center;
+  gap: 10px 20px;
+  /* row-gap: 10px;
+  column-gap: 20px; */
 
-  /* flex-direction, flex-wrap */
-  flex-flow: row wrap;
+  flex-flow: row wrap; /* flex-direction, flex-wrap */
+  align-content: center;
 }
 
 .box {
