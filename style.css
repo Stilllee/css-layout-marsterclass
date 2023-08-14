@@ -18,10 +18,11 @@
 .box:first-child {
   background-color: tomato;
 
-  /* 아래의 조합은 max-width처럼 작용함 */
-  flex-grow: 0; /* 더 커질 수 없음 */
-  flex-shrink: 3;
-  flex-basis: 500px; /* 기본 크기 500px === 500px 이상으로 더 커질 수 없음 */
+  /* 축약형 */
+  flex: 1 0 500px;
+  /* flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 500px; */
 }
 
 .box:last-child {
