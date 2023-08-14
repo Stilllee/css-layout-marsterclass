@@ -1,0 +1,69 @@
+:root {
+  --butter-red: #9d3830;
+  --butter-blue: #243455;
+  --butter-cream: #f0e1ca;
+  --butter-yellow: #f7d488;
+  --butter-green: #2e4a3b;
+  --light-red: #f7bfb4;
+  --light-blue: #a8d0e6;
+  --light-cream: #fefcf0;
+  --light-yellow: #f7e9b4;
+  --light-green: #b5d8c6;
+}
+
+$red: var(--butter-red);
+$blue: var(--butter-blue);
+$cream: var(--butter-cream);
+$lightCream: var(--light-cream);
+$yellow: var(--butter-yellow);
+$green: var(--butter-green);
+$lightRed: var(--light-red);
+$lightBlue: var(--light-blue);
+$lightYellow: var(--light-yellow);
+$lightGreen: var(--light-green);
+
+// variables
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1200px;
+
+@mixin smallDevice {
+  @media screen and (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin mediumDevice {
+  @media screen and (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin largeDevice {
+  @media screen and (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin xLargeDevice {
+  @media screen and (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+body {
+  background-color: $cream;
+  @include smallDevice {
+    background-color: $blue;
+  }
+  @include mediumDevice {
+    background-color: $red;
+  }
+  @include largeDevice() {
+    background-color: $green;
+  }
+  @include xLargeDevice() {
+    background-color: $yellow;
+  }
+}
