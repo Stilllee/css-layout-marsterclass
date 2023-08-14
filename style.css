@@ -1,31 +1,42 @@
+:root {
+  --butter-red: #9d3830;
+  --butter-blue: #243455;
+  --butter-cream: #f0e1ca;
+  --butter-yellow: #f7d488;
+  --butter-green: #2e4a3b;
+  --light-red: #f7bfb4;
+  --light-blue: #a8d0e6;
+  --light-cream: #fefcf0;
+  --light-yellow: #f7e9b4;
+  --light-green: #b5d8c6;
+}
+
 .father {
+  display: grid;
+  grid-template-columns: 100px 200px 50px;
+  grid-template-rows: 200px 100px;
+  gap: 10px 20px;
+}
+
+.child {
+  background-color: var(--butter-red);
   display: flex;
-  height: 100vh;
-  justify-content: center;
+  color: var(--light-cream);
+  font-size: 28px;
   align-items: center;
-}
-
-.box {
-  height: 200px;
-  color: white;
-  font-size: 36px;
-  display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-/* flex-basis */
-.box:first-child {
-  background-color: tomato;
-
-  /* 축약형 */
-  flex: 1 0 500px;
-  /* flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 500px; */
+.child:first-child {
+  background-color: var(--butter-green);
+  /* grid-row-start: 1;
+  grid-row-end: 3; */
+  grid-row: 1 / 3; /* 첫번째 행부터 세번째 행까지 */
 }
 
-.box:last-child {
-  background-color: teal;
-  flex-grow: 1;
+.child:last-child {
+  background-color: var(--butter-blue);
+  /* grid-column-start: 2;
+  grid-column-end: -1; */
+  grid-column: 2 / -1; /* 두번째 열부터 마지막 열까지 */
 }
