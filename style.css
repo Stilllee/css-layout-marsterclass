@@ -12,10 +12,21 @@
 }
 
 .father {
+  min-height: 50vh;
   display: grid;
-  grid-template-columns: [lime] 100px [tomato] 200px [banana] 50px [lemon];
-  grid-template-rows: [korea] 200px [thailand] 100px [spain];
-  gap: 10px 20px;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  /* 계획하지 않은, 즉 준비하지 않은 행의 크기를 미리 지정*/
+  grid-auto-rows: 1fr;
+
+  /* 기본값은 row로 열이 준비되지 않은 경우 새 행으로 배치되지만, column으로 바꾸면 새 열로 추가됨 */
+  grid-auto-flow: column;
+
+  /* 준비되지 않은 열의 크기를 지정 */
+  /* 계획한 1번~4번까지는 1fr의 크기로, 그 이후 5번~10번까지는 0.5fr인 절반의 크기가 됨 */
+  grid-auto-columns: 0.5fr;
 }
 
 .child {
@@ -25,22 +36,4 @@
   font-size: 28px;
   align-items: center;
   justify-content: center;
-}
-
-.child:first-child {
-  background-color: var(--butter-green);
-  /* grid-row-start: 1;
-  grid-row-end: 3;
-  grid-row: korea / spain;
-  */
-  /* grid-row: span 2; */
-}
-
-.child:last-child {
-  background-color: var(--butter-blue);
-  /* grid-column-start: 2;
-  grid-column-end: -1; 
-  grid-column: tomato / lemon;
-  */
-  grid-column: tomato / span 2;
 }
