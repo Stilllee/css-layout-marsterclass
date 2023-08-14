@@ -7,7 +7,7 @@
   column-gap: 20px; */
 
   flex-flow: row wrap; /* flex-direction, flex-wrap */
-  align-content: center;
+  align-items: center;
 }
 
 .box {
@@ -21,17 +21,13 @@
   align-items: center;
 }
 
-.box:nth-child(3) {
-  background-color: lightseagreen;
-  order: 2;
+/* align-self */
+/* 한 가지 자식에만 적용되는 속성 */
+
+.box:first-child {
+  align-self: flex-start;
 }
 
-.box:nth-child(6) {
-  background-color: cornflowerblue;
-  order: 1;
-}
-
-.box:nth-child(8) {
-  background-color: darkslateblue;
-  order: -1;
+.box:last-child {
+  align-self: flex-end;
 }
