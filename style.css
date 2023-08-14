@@ -11,44 +11,36 @@
   --light-green: #b5d8c6;
 }
 
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-
+.father {
   display: grid;
-  height: 100vh;
-
-  /* grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
-  grid-template-areas:
-    "a a a a"
-    "b b b c"
-    "d d d d"; */
-
-  grid-template:
-    "a a a a" 1fr
-    "b b b c" 2fr
-    "d d d d" 1fr / 1fr 1fr 1fr 1fr;
+  grid-template-columns: [lime] 100px [tomato] 200px [banana] 50px [lemon];
+  grid-template-rows: [korea] 200px [thailand] 100px [spain];
+  gap: 10px 20px;
 }
 
-header {
-  background-color: var(--butter-blue);
-  grid-area: a;
-}
-
-section {
-  background-color: var(--butter-yellow);
-  grid-area: b;
-}
-
-aside {
-  background-color: var(--butter-green);
-  grid-area: c;
-}
-
-footer {
+.child {
   background-color: var(--butter-red);
-  grid-area: d;
+  display: flex;
+  color: var(--light-cream);
+  font-size: 28px;
+  align-items: center;
+  justify-content: center;
+}
+
+.child:first-child {
+  background-color: var(--butter-green);
+  /* grid-row-start: 1;
+  grid-row-end: 3;
+  grid-row: korea / spain;
+  */
+  /* grid-row: span 2; */
+}
+
+.child:last-child {
+  background-color: var(--butter-blue);
+  /* grid-column-start: 2;
+  grid-column-end: -1; 
+  grid-column: tomato / lemon;
+  */
+  grid-column: tomato / span 2;
 }
