@@ -11,38 +11,41 @@
   --light-green: #b5d8c6;
 }
 
-$bgColor: var(--light-cream);
 $red: var(--butter-red);
 $blue: var(--butter-blue);
+$cream: var(--butter-cream);
 $lightCream: var(--light-cream);
 $yellow: var(--butter-yellow);
+$green: var(--butter-green);
+$lightRed: var(--light-red);
+$lightBlue: var(--light-blue);
+$lightYellow: var(--light-yellow);
+$lightGreen: var(--light-green);
 
 body {
-  background-color: $bgColor;
+  background-color: $lightCream;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   padding: 60px;
 }
 
-%alert {
+@mixin alert($bgColor, $borderColor) {
+  background-color: $bgColor;
   margin: 10px;
   padding: 10px 20px;
   border-radius: 10px;
-  border: 1px dashed #000;
+  border: 5px dashed $borderColor;
   color: $lightCream;
 }
 
 .success {
-  @extend %alert;
-  background-color: $blue;
+  @include alert($blue, $red);
 }
 
 .warning {
-  @extend %alert;
-  background-color: $yellow;
+  @include alert($yellow, $green);
 }
 
 .error {
-  @extend %alert;
-  background-color: $red;
+  @include alert($red, $yellow);
 }
