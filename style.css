@@ -16,17 +16,12 @@
   height: 100vh;
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(2, 100px);
-
-  /* justify-content: center;
-  align-content: center; */
-  place-content: center; /* place-content: center center와 같음 */
+  grid-template-columns: repeat(3, minmax(300px, 500px));
 }
 
 .child {
   background-color: var(--butter-red);
-  color: var(--butter-yellow);
+  color: var(--light-cream);
   font-size: 28px;
   display: flex;
   align-items: center;
