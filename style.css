@@ -18,10 +18,10 @@
 .box:first-child {
   background-color: tomato;
 
-  /* 아래의 조합으로 min-width와 같은 효과를 낼 수 있음 */
-  flex-grow: 1; /* 원하는 만큼 커질 수 있음 */
-  flex-shrink: 0;
-  flex-basis: 500px; /* 최소한의 너비를 가짐 === 축소를 시작하면 500px에서 멈출 것임 */
+  /* 아래의 조합은 max-width처럼 작용함 */
+  flex-grow: 0; /* 더 커질 수 없음 */
+  flex-shrink: 3;
+  flex-basis: 500px; /* 기본 크기 500px === 500px 이상으로 더 커질 수 없음 */
 }
 
 .box:last-child {
