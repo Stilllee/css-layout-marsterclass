@@ -3,7 +3,6 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  flex-flow: row wrap; /* flex-direction, flex-wrap */
 }
 
 .box {
@@ -15,14 +14,22 @@
   align-items: center;
 }
 
-/* flex-grow */
-/* flex 컨테이너 자식들에게 얼마만큼의 공간을 차지할 수 있는지 비율로 말해줌 */
+/* flex-shrink */
+/* 아이템이 얼마나 줄어들지 지 비율로 정할 수 있음 */
 .box:first-child {
   background-color: tomato;
   flex-grow: 1;
+  flex-shrink: 3; /* 3배 더 빨리 줄어듦 */
+}
+
+.box:nth-child(2) {
+  background-color: orange;
+  flex-grow: 2;
+  flex-shrink: 0; /* 줄어들지 않음 */
 }
 
 .box:last-child {
   background-color: teal;
-  flex-grow: 2;
+  flex-grow: 1;
+  flex-shrink: 1; /* 기본값 */
 }
