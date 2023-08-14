@@ -12,35 +12,23 @@
 }
 
 .father {
-  min-height: 50vh;
+  background-color: var(--light-cream);
+  height: 100vh;
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-auto-rows: 1fr;
-  grid-auto-columns: 1fr;
-  grid-auto-flow: column;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(2, 100px);
 
-  /* justify-items: end;
-  align-items: center; */
-  place-items: end center;
+  /* justify-content: center;
+  align-content: center; */
+  place-content: center; /* place-content: center center와 같음 */
 }
 
 .child {
-  width: 50px;
-  height: 50px;
   background-color: var(--butter-red);
-  color: var(--light-cream);
-  display: flex;
+  color: var(--butter-yellow);
   font-size: 28px;
+  display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* 6번 박스만 위치 변경 */
-.child:nth-child(6) {
-  background-color: var(--butter-green);
-  /* align-self: start;
-  justify-self: end; */
-  place-self: start end;
 }
